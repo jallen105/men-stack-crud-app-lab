@@ -30,6 +30,11 @@ app.get('/cats/new', (req, res) => {
     res.render('new.ejs')
 })
 
+app.get('/cats/:catId', async (req, res) => {
+    const foundCat = await Cat.findById(req.params.catId)
+    res.render('show.ejs', { cat: foundCat })
+})
+
 app.post('/cats', async (req, res) => {
     const newCat = await Cat.create(req.body)
     console.log(newCat)
