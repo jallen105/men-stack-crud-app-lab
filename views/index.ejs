@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat Lab</title>
+    <style>
+        .img-card img{
+            max-width: 500px;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <a href="/cats/new">Add New Cat</a>
+    </nav>
     <h1>Here are some cool cats!</h1>
-    <a href="/cats/new">Add New Cat</a>
+    <div class="img-container">
+        <% cats.forEach((cat) => { %>
+            <div class="img-card"><a href="/cats/<%= cat._id %>"><img src="<%= cat.image %>" alt="<%= cat.name %>"></a></div>
+        <% }) %>
+    </div>
 </body>
 </html>

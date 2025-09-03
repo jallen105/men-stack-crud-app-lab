@@ -21,8 +21,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"))
 app.use(morgan('dev'));
 
-app.get('/cats', (req, res) => {
-    res.render('index.ejs')
+app.get('/cats', async (req, res) => {
+    const allCats = await Cat.find()
+    res.render('index.ejs', { cats: allCats })
 })
 
 app.get('/cats/new', (req, res) => {
