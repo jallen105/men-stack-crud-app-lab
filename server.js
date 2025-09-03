@@ -17,7 +17,7 @@ mongoose.connection.on("connected", () => {
 
 const Cat = require('./models/cat.js')
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"))
 app.use(morgan('dev'));
 
@@ -33,6 +33,16 @@ app.get('/cats/new', (req, res) => {
 app.get('/cats/:catId', async (req, res) => {
     const foundCat = await Cat.findById(req.params.catId)
     res.render('show.ejs', { cat: foundCat })
+})
+
+app.get('/cats/:catId/edit', async (req, res) => {
+    const foundCat = await Cat.findById(req.params.catId)
+    res.render('edit.ejs', { cat: foundCat })
+})
+
+app.put('/cats/:catId', async (req, res) => {
+    await Cat.findByIdAndUpdate(req.params.catId, req.body)
+    res.redirect(`/cats/${req.params.catId}`)
 })
 
 app.post('/cats', async (req, res) => {

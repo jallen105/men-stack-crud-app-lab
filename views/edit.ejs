@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a Cat</title>
+  </head>
+
+<body>
+  <h1>Edit <%= cat.name %></h1>
+  <form action="/cats/<%= cat._id %>?_method=PUT" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= cat.name %>" />
+    <label for="age">Age:</label>
+    <input type="text" name="age" id="age" value="<%= cat.age %>" />
+    <label for="image">Link to Image:</label>
+    <input type="text" name="image" id="image" value="<%= cat.image %>" />    
+    
+
+    <button type="submit">Update <%= cat.name %></button>
+
+    <a href="/cats">Back to Home</a>
+
+  </form>
+</body>
+
+</html>
