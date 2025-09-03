@@ -21,8 +21,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"))
 app.use(morgan('dev'));
 
-app.get('/cat', (req, res) => {
+app.get('/cats', (req, res) => {
     res.render('index.ejs')
+})
+
+app.get('/cats/new', (req, res) => {
+    res.render('new.ejs')
+})
+
+app.post('/cats', async (req, res) => {
+    const newCat = await Cat.create(req.body)
+    console.log(newCat)
+    res.redirect('/cats')
 })
 
 app.listen(port, () => {
