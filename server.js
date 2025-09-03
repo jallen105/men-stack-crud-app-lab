@@ -16,9 +16,13 @@ mongoose.connection.on("connected", () => {
 })
 
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride("_method"));
+app.use(methodOverride("_method"))
 app.use(morgan('dev'));
 
+app.get('/cat', (req, res) => {
+    res.render('index.ejs')
+})
+
 app.listen(port, () => {
-  console.log(`The express app is ready on port ${port}!`);
-});
+  console.log(`The express app is ready on port ${port}!`)
+})
