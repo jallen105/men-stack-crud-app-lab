@@ -15,6 +15,8 @@ mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`)
 })
 
+const Cat = require('./models/cat.js')
+
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"))
 app.use(morgan('dev'));
