@@ -51,6 +51,11 @@ app.post('/cats', async (req, res) => {
     res.redirect('/cats')
 })
 
+app.delete('/cats/:catId', async (req, res) => {
+    await Cat.findByIdAndDelete(req.params.catId)
+    res.redirect('/cats')
+})
+
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`)
 })
