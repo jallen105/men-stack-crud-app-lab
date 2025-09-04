@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap);
+
+body {
+    background-color: #C0B7B1;
+    color: #433E3F;
+    font-family: 'DynaPuff';
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: 'wdth' 100;
+}
+
+h1  {
+    justify-self: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: #387D7A;
+    font-size: larger;
+    margin: 0 10px;
+}
+
+nav a:visited {
+    color: #387D7A;
+}
+
+form {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: silver;
+    background-color: #8367C7;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 5px 6px #387D7A;
+    margin: 20px 10px;
+    width: 15%;
+}
+
+label, input {
+    margin: 10px 2px 0 2px;
+}
+
+.input-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button {
+   align-self: center;
+   margin: 10px 4px 4px 4px;
+   background-color: #387D7A;
+   color: silver;
+   padding: 5px 10px;
+   border-radius: 15px;
+   border: none;
+   width: 15em;
+}
+
+button:hover {
+   background-color: #433E3F;
+}
+
+button:active {
+   background-color: #2d4d3a;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-card {
+    margin: 5px 0;
+}
+
+.img-card img {
+    max-width: 500px;
+}
+
+.delete-form {
+    background-color: transparent;
+    box-shadow: 0 0;
+}
+
+#delete-btn {
+    background-color: #DE3C4B;
+    color: silver;
+    align-self: center;
+    margin: 10px 4px 4px 4px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    width: 15em;
+}

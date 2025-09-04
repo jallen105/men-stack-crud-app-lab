@@ -3,19 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= cat.name %></title>
   </head>
   <body>
-    <a href="/cats/<%= cat._id %>/edit">Edit <%= cat.name %></a>
-    <a href="/cats/">Back to Home</a>
+    
+    <nav>
+      <a href="/cats/">Back to Home</a>
+      <a href="/cats/<%= cat._id %>/edit">Edit <%= cat.name %></a>
+    </nav>
     
     <h1><%= cat.name %></h1>
-    <p><%= cat.name %> is <%= cat.age %> years old.</p>
+    <div class="img-container">
+      <p><%= cat.name %> is <%= cat.age %> years old.</p>
+      <div class="img-card"><img src="<%= cat.image %>" alt="<%= cat.name %>"></div>
+    </div>
 
-    <div class="img-container"><img src="<%= cat.image %>" alt="<%= cat.name %>"></div>
 
-    <form action="/cats/<%=cat._id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete <%= cat.name %></button>
+    <form action="/cats/<%=cat._id%>?_method=DELETE" method="POST" class="delete-form">
+        <button type="submit" id="delete-btn">Delete <%= cat.name %></button>
     </form>
 
   </body>

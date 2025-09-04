@@ -4,25 +4,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Add a Cat</title>
   </head>
 
 <body>
+  <nav>
+    <a href="/cats">Back to Home</a>
+  </nav>
+  
   <h1>Add a Cat!</h1>
-  <form action="/cats" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name" />
-    <label for="age">Age:</label>
-    <input type="text" name="age" id="age" />
-    <label for="image">Link to Image:</label>
-    <input type="text" name="image" id="image" />    
-    
 
+  <form action="/cats" method="POST">
+
+    <div class="input-container"> 
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+
+      <label for="age">Age:</label>
+      <input type="text" name="age" id="age" />
+
+      <label for="image">Link to Image:</label>
+      <input type="text" name="image" id="image" />   
+    </div>
+ 
+    
     <button type="submit">Add Cat</button>
 
-    <a href="/cats">Back to Home</a>
-
   </form>
+
 </body>
 
 </html>
